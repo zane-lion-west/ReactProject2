@@ -2,8 +2,6 @@
 import s from './App.module.scss'
 import Expenses from './components/expenses/Expenses'
 
-
-
 function App() {
  
   return (
@@ -13,4 +11,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
