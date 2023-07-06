@@ -1,6 +1,6 @@
 import z from './Expenses.module.scss';
 import ExpenseItem from './ExpenseItem';
-import Card from './Card';
+import Card from '../UI/Card';
 
 /**
  * @typedef ExpensesProps

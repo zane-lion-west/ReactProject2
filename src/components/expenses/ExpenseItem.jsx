@@ -1,7 +1,7 @@
 //import Expenses from './Expenses';
 import s from "./ExpenseItem.module.scss";
 import ExpenseDate from "./ExpenseDate";
-import Card from "./Card";
+import Card from "../UI/Card";
 // eslint-disable-next-line no-unused-vars
 
 const ExpenseItem = (props) => {
