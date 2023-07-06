@@ -1,5 +1,4 @@
 import z from './Expenses.module.scss';
-import s from './ExpenseItem.module.scss';
 import ExpenseItem from './ExpenseItem';
 
 /**
@@ -8,7 +7,7 @@ import ExpenseItem from './ExpenseItem';
  * @param {ExpensesProps} props
  * @returns {JSX.Element}
  */
-const Expenses = (props) => {
+const Expenses = () => {
     const expenses = [
         {
             id: 'e1',
