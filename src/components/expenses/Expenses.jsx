@@ -1,5 +1,6 @@
 import z from './Expenses.module.scss';
 import ExpenseItem from './ExpenseItem';
+import Card from './Card';
 
 /**
  * @typedef ExpensesProps
@@ -37,11 +38,11 @@ const Expenses = () => {
         ];
     
   return (
-    <div className={z.expenses}>
+    <Card className={z.expenses}>
         {expenses?.map(( {id, title, amount, date} ) => (
         <ExpenseItem key={id} title={title} amount={amount} date={date}/>
       ))}      
-    </div>
+    </Card>
   );
 };
 
