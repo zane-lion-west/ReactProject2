@@ -3,7 +3,7 @@ import s from "./ExpenseItem.module.scss";
 import ExpenseDate from "./ExpenseDate";
 // eslint-disable-next-line no-unused-vars
 
-export const ExpenseItem = (props) => {
+const ExpenseItem = (props) => {
 
   return (
     <div className={s.expense_item}>
@@ -14,4 +14,6 @@ export const ExpenseItem = (props) => {
     </div>
     </div>
   )
-}
+};
+
+export default ExpenseItem;
