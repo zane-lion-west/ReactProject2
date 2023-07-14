@@ -1,5 +1,5 @@
 //import Expenses from './Expenses';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import s from "./ExpenseItem.module.scss";
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";

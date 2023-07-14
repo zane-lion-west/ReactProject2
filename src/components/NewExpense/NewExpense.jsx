@@ -8,9 +8,14 @@ import s from './NewExpense.module.scss';
  * @returns {JSX.Element}
  */
 const NewExpense = () => {
+    const handleExpenseSubmit = (title, date, amount) => {
+        console.log(title, date, amount);
+        //const savedTitle = title;
+        //const savedDate
+    }
   return (
     <div className={s.new_expense}>
-      <ExpenseForm />
+      <ExpenseForm callback={handleExpenseSubmit}/>
     </div>
   );
 };
