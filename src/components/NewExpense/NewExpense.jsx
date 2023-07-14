@@ -8,8 +8,8 @@ import s from './NewExpense.module.scss';
  * @returns {JSX.Element}
  */
 const NewExpense = () => {
-    const handleExpenseSubmit = (title, date, amount) => {
-        console.log(title, date, amount);
+    const handleExpenseSubmit = (title, amount, date) => {
+        console.log(title, amount, date);
         //const savedTitle = title;
         //const savedDate
     }

@@ -25,28 +25,56 @@ const ExpenseForm = ({callback}) => {
         setEnteredDate(event.target.value);
     };
 
+    // Multi useState handling method
+
+//    const inputChangeHandler = (identifier, value) => {
+//        if (identifier === 'title') {
+//            setEnteredTitle(value);
+//        } else if (identifier === 'date') {
+//            setEnteredDate(value);
+//        }  else {
+//            setEnteredAmount(value);
+//        }
+//    };
+
+//Multinput change handler function call for labels:
+// <input type="text" onChange={(event) => inputChangeHandler('title', event.target.value)}/>
+
+
+
     const onSubmitHandler = (event) => {
         event.preventDefault();
-        callback(enteredTitle, enteredDate, enteredAmount);
+        //callback(enteredTitle, enteredDate, enteredAmount);
+        const expenseData = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: new Date(enteredDate)
+        };
+        console.log(expenseData)
+        enteredTitle('');
+        enteredDate('');
+        enteredAmount('');
     }
+
+
 
   return (
     <form onSubmit={onSubmitHandler}>
         <div className={s.new_expense__controls}>
             <div className={s.new_expense__control}>
                 <label>Title</label>
-                <input type="text" onChange={titleChangeHandler}/>
+                <input type="text" value={enteredTitle} onChange={titleChangeHandler}/>
             </div>
             <div className={s.new_expense__control}>
                 <label>Amount</label>
-                <input type="number" min="0.01" step="0.01" onChange={amountChangeHandler}/>
+                <input type="number" value={enteredAmount} min="0.01" step="0.01" onChange={amountChangeHandler}/>
             </div>
             <div className={s.new_expense__control}>
                 <label>Date</label>
-                <input type="date" min="2019-01-01" max="2025-12-31" onChange={dateChangeHandler}/>    
+                <input type="date" value={enteredDate} min="2019-01-01" max="2025-12-31" onChange={dateChangeHandler}/>    
             </div> 
         </div>
-        <div className={s.new_expense__actions}>
+        <div className={s.new_expense__actions}> 
             <button type='submit' >Add Expense</button>
         </div>
     </form>
