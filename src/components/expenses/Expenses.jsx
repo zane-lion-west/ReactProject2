@@ -1,6 +1,8 @@
 import z from './Expenses.module.scss';
 import ExpenseItem from './ExpenseItem';
+import ExpensesFilter from './ExpensesFilter';
 import Card from '../UI/Card';
+import { useState } from 'react';
 
 /**
  * @typedef ExpensesProps
@@ -8,7 +10,21 @@ import Card from '../UI/Card';
  * @param {ExpensesProps} props
  * @returns {JSX.Element}
  */
-const Expenses = () => {
+const Expenses = (props) => {
+    const [selectedYear, setSelectedYear] = useState('2020');
+    
+    let filterInfoText = '2019, 2021 & 2022';
+
+    if (selectedYear === '2019') {
+      filterInfoText('2020, 2021 & 2022')
+    } else if (selectedYear === '2021') {
+      filterInfoText('2019, 2020 & 2022')
+    } else {filterInfoText('2019, 2020 & 2021')}
+
+    const filterChangeHandler = selectedYear => {
+      setSelectedYear(selectedYear);
+    };
+
     const expenses = [
         {
             id: 'e1',
@@ -38,11 +54,15 @@ const Expenses = () => {
         ];
     
   return (
-    <Card className={z.expenses}>
-        {expenses?.map(( {id, title, amount, date} ) => (
-        <ExpenseItem key={id} title={title} amount={amount} date={date}/>
-      ))}      
-    </Card>
+    <div>
+      <Card className={z.expenses}>
+        <ExpensesFilter selected={selectedYear} onChange={setSelectedYear}/>
+        <p>Data for years {filterInfoText} is hidden..</p>
+          {expenses.filter(expense => selectedYear!='' && expense.date.getFullYear()==selectedYear)?.map(( {id, title, amount, date} ) => (
+          <ExpenseItem key={id} title={title} amount={amount} date={date}/>
+        ))}      
+      </Card>
+    </div>
   );
 };
 

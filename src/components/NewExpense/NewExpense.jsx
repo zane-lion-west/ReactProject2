@@ -7,15 +7,17 @@ import s from './NewExpense.module.scss';
  * @param {NewExpenseProps} props
  * @returns {JSX.Element}
  */
-const NewExpense = () => {
-    const handleExpenseSubmit = (title, amount, date) => {
-        console.log(title, amount, date);
-        //const savedTitle = title;
-        //const savedDate
-    }
+const NewExpense = (props) => {
+    const handleExpenseSubmit = (enteredExpenseData) => {
+        const expenseData = {
+            ...enteredExpenseData,
+            id: Math.random().toString()
+        };
+        props.onAddExpense(expenseData);
+    };
   return (
     <div className={s.new_expense}>
-      <ExpenseForm callback={handleExpenseSubmit}/>
+      <ExpenseForm onSaveExpenseData={handleExpenseSubmit}/>
     </div>
   );
 };
