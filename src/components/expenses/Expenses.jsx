@@ -16,10 +16,11 @@ const Expenses = (props) => {
     let filterInfoText = '2019, 2021 & 2022';
 
     if (selectedYear === '2019') {
-      filterInfoText('2020, 2021 & 2022')
+      filterInfoText = '2020, 2021 & 2022';
     } else if (selectedYear === '2021') {
-      filterInfoText('2019, 2020 & 2022')
-    } else {filterInfoText('2019, 2020 & 2021')}
+      filterInfoText = '2019, 2020 & 2022';
+    } else {
+      filterInfoText = '2019, 2020 & 2021';}
 
     const filterChangeHandler = selectedYear => {
       setSelectedYear(selectedYear);
@@ -56,7 +57,7 @@ const Expenses = (props) => {
   return (
     <div>
       <Card className={z.expenses}>
-        <ExpensesFilter selected={selectedYear} onChange={setSelectedYear}/>
+        <ExpensesFilter selected={selectedYear} onChange={filterChangeHandler}/>
         <p>Data for years {filterInfoText} is hidden..</p>
           {expenses.filter(expense => selectedYear!='' && expense.date.getFullYear()==selectedYear)?.map(( {id, title, amount, date} ) => (
           <ExpenseItem key={id} title={title} amount={amount} date={date}/>
