@@ -5,7 +5,6 @@ import ExpenseItem from './ExpenseItem';
 import ExpensesFilter from './ExpensesFilter';
 import Card from '../UI/Card';
 
-
 /**
  * @typedef ExpensesProps
  * 
@@ -13,7 +12,7 @@ import Card from '../UI/Card';
  * @returns {JSX.Element}
  */
 const Expenses = (props) => {
-    const [selectedYear, setSelectedYear] = useState('2020');
+    const [filteredYear, setFilteredYear] = useState('2020');
     
     // let filterInfoText = '2019, 2021 & 2022';
 
@@ -25,7 +24,7 @@ const Expenses = (props) => {
     //   filterInfoText = '2019, 2020 & 2021';}
 
     const filterChangeHandler = selectedYear => {
-      setSelectedYear(selectedYear);
+      setFilteredYear(selectedYear);
     };
 
     // <Card className={z.expenses}>
@@ -36,15 +35,19 @@ const Expenses = (props) => {
     //     ))}      
     //   </Card>
   
+    const filteredExpenses = props.items.filter(expense => {
+      return expense.date.getFullYear().toString() === filteredYear;
+    });
+
 
   return (
     <div>
       <Card className={z.expenses}>
         <ExpensesFilter 
-        selected={selectedYear} 
+        selected={filteredYear} 
         onChange={filterChangeHandler}
         />
-        {props.items.map((expense) => (
+        {filteredExpenses.map((expense) => (
           <ExpenseItem
             key={expense.id} 
             title={expense.title}
@@ -56,19 +59,5 @@ const Expenses = (props) => {
     </div>
   );
 };
-
-/*
-Mapping the Expense array so that it isnt hard coded as several elements ( the way the instructor did it)
-
-{props.items.map((expense) => (
-  <ExpenseItem
-    id=
-    title={expense.title}
-    amount={expense.amount}
-    date={expense.dat}
-    />
-))}
-
-*/
 
 export default Expenses;
