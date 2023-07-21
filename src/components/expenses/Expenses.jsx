@@ -67,4 +67,19 @@ const Expenses = (props) => {
   );
 };
 
+
+/*
+Mapping the Expense array so that it isnt hard coded as several elements ( the way the instructor did it)
+
+{props.items.map((expense) => (
+  <ExpenseItem
+    id=
+    title={expense.title}
+    amount={expense.amount}
+    date={expense.dat}
+    />
+))}
+
+*/
+
 export default Expenses;
