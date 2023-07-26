@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 import z from './Expenses.module.scss';
-import ExpenseItem from './ExpenseItem';
 import ExpensesFilter from './ExpensesFilter';
 import Card from '../UI/Card';
+import ExpensesList from './ExpensesList';
 
 /**
  * @typedef ExpensesProps
@@ -35,26 +35,19 @@ const Expenses = (props) => {
     //     ))}      
     //   </Card>
   
-    const filteredExpenses = props.items.filter(expense => {
+    const filteredExpenses = props.items.filter((expense) => {
       return expense.date.getFullYear().toString() === filteredYear;
     });
-
+  
 
   return (
     <div>
       <Card className={z.expenses}>
         <ExpensesFilter 
         selected={filteredYear} 
-        onChange={filterChangeHandler}
+        onChangeFilter={filterChangeHandler}
         />
-        {filteredExpenses.map((expense) => (
-          <ExpenseItem
-            key={expense.id} 
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          />
-        ))}                
+        <ExpensesList  items={filteredExpenses}/>
       </Card>
     </div>
   );
