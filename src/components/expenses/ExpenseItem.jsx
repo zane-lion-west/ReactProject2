@@ -1,9 +1,7 @@
-//import Expenses from './Expenses';
-import { useState } from 'react';
+
 import s from "./ExpenseItem.module.scss";
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
-
 
 // eslint-disable-next-line no-unused-vars
 
