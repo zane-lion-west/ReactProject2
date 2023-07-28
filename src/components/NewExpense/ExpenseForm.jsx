@@ -9,6 +9,18 @@ import { useState } from 'react';
  * @returns {JSX.Element}
  */
 const ExpenseForm = (props) => {
+    const [showForm, setShowForm] = useState(false);
+
+    const proceedButtonHandler = () => {
+      setShowForm(true);
+    }
+
+    const cancelButtonHandler = () => {
+      setShowForm(false);
+    }
+
+    let addExpensePopup;
+
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredAmount, setEnteredAmount] = useState('');
     const [enteredDate, setEnteredDate] = useState('')
@@ -26,27 +38,11 @@ const ExpenseForm = (props) => {
         setEnteredDate(event.target.value);
     };
 
-    // Multi useState handling method
-
-//    const inputChangeHandler = (identifier, value) => {
-//        if (identifier === 'title') {
-//            setEnteredTitle(value);
-//        } else if (identifier === 'date') {
-//            setEnteredDate(value);
-//        }  else {
-//            setEnteredAmount(value);
-//        }
-//    };
-
-//Multinput change handler function call for labels:
-// <input type="text" onChange={(event) => inputChangeHandler('title', event.target.value)}/>
-
     const onSubmitHandler = (event) => {
         event.preventDefault();
-        //callback(enteredTitle, enteredDate, enteredAmount);
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate)
         };
         props.onSaveExpenseData(expenseData);
@@ -55,10 +51,9 @@ const ExpenseForm = (props) => {
         setEnteredDate('');
         
     }
-
-  return (
-    <div>
-        <form onSubmit={onSubmitHandler}>
+    
+    if (showForm) { addExpensePopup =
+      <form onSubmit={onSubmitHandler}>
             <div className={s.new_expense__controls}>
                 <div className={s.new_expense__control}>
                     <label>Title</label>
@@ -84,12 +79,27 @@ const ExpenseForm = (props) => {
                     onChange={dateChangeHandler}/>    
                 </div> 
             </div>
-        <div className={s.new_expense__actions}> 
+          <div className={s.new_expense__actions}>
+            <button type='button' onClick={cancelButtonHandler} >Cancel</button> 
             <button type='submit' >Add Expense</button>
+          </div>
+        </form>
+    }
+
+    if (showForm === false) { addExpensePopup =
+      <div className={s.new_expense__controls}>
+        <div className={s.new_expense__actions_2}>
+          <button onClick={proceedButtonHandler} >Add New Expense</button>
         </div>
-    </form>
+      </div>
+    }
+
+  return (
+    <div>
+      {addExpensePopup}              
     </div>
   );
 };
 
 export default ExpenseForm;
+

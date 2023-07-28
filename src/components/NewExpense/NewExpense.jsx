@@ -8,6 +8,7 @@ import s from './NewExpense.module.scss';
  * @returns {JSX.Element}
  */
 const NewExpense = (props) => {
+    
     const handleExpenseSubmit = (enteredExpenseData) => {
         const expenseData = {
             ...enteredExpenseData,
