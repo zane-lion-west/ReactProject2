@@ -5,6 +5,14 @@ import Card from "../UI/Card";
 
 // eslint-disable-next-line no-unused-vars
 
+/**
+ * @typedef ExpenseItemProps
+ * 
+ * @param {ExpenseItemProps} props 
+ * @returns 
+ */
+
+
 const ExpenseItem = (props) => {
 
   return (

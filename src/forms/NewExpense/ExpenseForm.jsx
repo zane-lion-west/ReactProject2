@@ -5,6 +5,10 @@ import { useState } from 'react';
 /**
  * @typedef ExpenseFormProps
  * 
+ * @property {string} title - Title of the expenses array objects
+ * @property {number} amount - Amount for the expenses array objects
+ * @property {date} date - Date for the expenses array object
+ * 
  * @param {ExpenseFormProps} props
  * @returns {JSX.Element}
  */
@@ -87,7 +91,7 @@ const ExpenseForm = (props) => {
     }
 
     if (showForm === false) { addExpensePopup =
-      <div className={s.new_expense__controls}>
+      <div className={s.new_expense__controls_2}>
         <div className={s.new_expense__actions_2}>
           <button onClick={proceedButtonHandler} >Add New Expense</button>
         </div>

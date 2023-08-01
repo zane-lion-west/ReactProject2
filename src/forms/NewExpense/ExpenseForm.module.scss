@@ -6,6 +6,14 @@
   text-align: left;
 }
 
+.new_expense__controls_2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
 .new_expense__control label {
   font-weight: bold;
   margin-bottom: 0.5rem;
@@ -27,5 +35,5 @@
 
 .new_expense__actions_2 {
   justify-content: center;
-  text-align: center;
+  text-align: flex-center;
 }

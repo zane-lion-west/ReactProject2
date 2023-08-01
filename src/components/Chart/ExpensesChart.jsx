@@ -1,8 +1,14 @@
-import Chart from '../Chart/Chart';
+import Chart from './Chart';
 import s from './ExpensesChart.module.scss';
 
 /**
  * @typedef ExpensesChartProps
+ * 
+ * @property {string} label - The label for the individual month on the chart
+ * @property {number} value - The base value for the individual chart elements
+ * 
+ * @property {date} expenseMonth - Iterated month from dummy expenses array for the chart
+ * @property {number} chartDataPoints - collecting and transforming dummy expenses value for the monthly value of the chart
  * 
  * @param {ExpensesChartProps} props
  * @returns {JSX.Element}

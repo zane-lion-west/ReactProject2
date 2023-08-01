@@ -3,6 +3,10 @@ import s from './ExpenseDate.module.scss';
 /**
  * @typedef ExpenseDateProps
  * 
+ * @property {date} month - Month of the expenses objects date
+ * @property {day} day - Day of the expenses object date
+ * @property {year} year - Year of the expenses object date
+ * 
  * @param {ExpenseDateProps} props
  * @returns {JSX.Element}
  */

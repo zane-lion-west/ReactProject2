@@ -4,6 +4,8 @@ import s from './NewExpense.module.scss';
 /**
  * @typedef NewExpenseProps
  * 
+ * @property {string} id - The id for new expense objects
+ * 
  * @param {NewExpenseProps} props
  * @returns {JSX.Element}
  */
