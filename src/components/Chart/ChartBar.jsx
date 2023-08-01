@@ -3,10 +3,21 @@ import s from './ChartBar.module.scss';
 /**
  * @typedef ChartBarProps
  * 
+ * @property {number} value - Chart Value for expenses monthly bar graph
+ * @property {number} maxValue - Maximum value for expenses monthly bar graph
+ * @property {string} label - Monthly label for expenses monthly bar graph
+ * 
+ * 
  * @param {ChartBarProps} props
  * @returns {JSX.Element}
  */
+
 const ChartBar = (props) => {
+  /**
+   * @type {string} barPercentageLevel
+   * @default '0%'
+   * 
+   */
   let barPercentageLevel = '0%';
 
   if (props.maxValue > 0) {
