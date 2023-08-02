@@ -17,9 +17,9 @@ const ExpenseDate = props => {
 
   return (
     <div className={s.expense_date}>
-      <div className={s.expense_date__month}>{month}</div>
-      <div className={s.expense_date__year}>{year}</div>
-      <div className={s.expense_date__day}>{day}</div>
+      <div className={s.month}>{month}</div>
+      <div className={s.year}>{year}</div>
+      <div className={s.day}>{day}</div>
     </div>
   );
 };

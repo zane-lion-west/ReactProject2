@@ -14,11 +14,11 @@ import Card from '../Card/Card';
 const ExpenseItem = props => {
   return (
     <li>
-      <Card className={s.expense_item}>
+      <Card className={s.expenseItem}>
         <ExpenseDate date={props.date} />
         <h2>{props.title}</h2>
-        <div className={s.expense_item__description}>
-          <div className={s.expense_item__price}>${props.amount}</div>
+        <div className={s.description}>
+          <div className={s.price}>${props.amount}</div>
         </div>
       </Card>
     </li>

@@ -25,13 +25,11 @@ const ChartBar = props => {
   }
 
   return (
-    <div className={s.chart_bar}>
-      <div className={s.chart_bar__inner}>
-        <div
-          className={s.chart_bar__fill}
-          style={{ height: barPercentageLevel }}></div>
+    <div className={s.chartBar}>
+      <div className={s.inner}>
+        <div className={s.fill} style={{ height: barPercentageLevel }}></div>
       </div>
-      <div className={s.chart_bar__label}>{props.label}</div>
+      <div className={s.label}>{props.label}</div>
     </div>
   );
 };

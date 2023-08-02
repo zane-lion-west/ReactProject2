@@ -1,4 +1,4 @@
-.new_expense__controls {
+.controls {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -6,34 +6,32 @@
   text-align: left;
 }
 
-.new_expense__controls_2 {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1rem;
+.textCenter {
   text-align: center;
 }
 
-.new_expense__control label {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  display: block;
+.control {
+  label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  input {
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 20rem;
+    max-width: 100%;
+  }
 }
 
-.new_expense__control input {
-  font: inherit;
-  padding: 0.5rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  width: 20rem;
-  max-width: 100%;
-}
-
-.new_expense__actions {
+.actions {
   text-align: right;
 }
 
-.new_expense__actions_2 {
+.alignCenter {
   justify-content: center;
   text-align: flex-center;
 }

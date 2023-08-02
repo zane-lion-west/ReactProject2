@@ -18,7 +18,7 @@ const NewExpense = props => {
     props.onAddExpense(expenseData);
   };
   return (
-    <div className={s.new_expense}>
+    <div className={s.newExpense}>
       <ExpenseForm onSaveExpenseData={handleExpenseSubmit} />
     </div>
   );

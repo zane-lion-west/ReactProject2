@@ -56,8 +56,8 @@ const ExpenseForm = props => {
   if (showForm) {
     addExpensePopup = (
       <form onSubmit={onSubmitHandler}>
-        <div className={s.new_expense__controls}>
-          <div className={s.new_expense__control}>
+        <div className={s.controls}>
+          <div className={s.control}>
             <label>Title</label>
             <input
               type="text"
@@ -65,7 +65,7 @@ const ExpenseForm = props => {
               onChange={titleChangeHandler}
             />
           </div>
-          <div className={s.new_expense__control}>
+          <div className={s.control}>
             <label>Amount</label>
             <input
               type="number"
@@ -75,7 +75,7 @@ const ExpenseForm = props => {
               onChange={amountChangeHandler}
             />
           </div>
-          <div className={s.new_expense__control}>
+          <div className={s.control}>
             <label>Date</label>
             <input
               type="date"
@@ -86,7 +86,7 @@ const ExpenseForm = props => {
             />
           </div>
         </div>
-        <div className={s.new_expense__actions}>
+        <div className={s.actions}>
           <button type="button" onClick={cancelButtonHandler}>
             Cancel
           </button>
@@ -98,8 +98,8 @@ const ExpenseForm = props => {
 
   if (showForm === false) {
     addExpensePopup = (
-      <div className={s.new_expense__controls_2}>
-        <div className={s.new_expense__actions_2}>
+      <div className={[s.controls, s.textCenter].join(' ')}>
+        <div className={[s.actions, s.alignCenter].join(' ')}>
           <button onClick={proceedButtonHandler}>Add New Expense</button>
         </div>
       </div>
